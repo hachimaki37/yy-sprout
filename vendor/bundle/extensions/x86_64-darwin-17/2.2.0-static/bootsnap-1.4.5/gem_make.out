@@ -1,0 +1,11 @@
+/Users/yutakayamaki/.rbenv/versions/2.2.4/bin/ruby -r ./siteconf20201021-32124-4t8krs.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20201021-32124-9vvkr/bootsnap
