@@ -1,8 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     <%= link_to "SPROUT FC", root_path, id: "logo" %>
+    </div>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
         <li><%= link_to "試合日程・結果", '#', style: 'color: #fff;' %></li>
         <li><%= link_to "順位表", '#', style: 'color: #fff;' %></li>
         <li><%= link_to "選手紹介", '#', style: 'color: #fff;' %></li>
