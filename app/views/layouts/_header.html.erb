@@ -1,0 +1,35 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <%= link_to "SPROUT FC", root_path, id: "logo" %>
+    </div>
+    <nav>
+      <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
+        <li><%= link_to "試合日程・結果", '#', style: 'color: #fff;' %></li>
+        <li><%= link_to "順位表", '#', style: 'color: #fff;' %></li>
+        <li><%= link_to "選手紹介", '#', style: 'color: #fff;' %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "新規登録", '#', style: 'color: #fff' %></li>
+            <li><%= link_to "ログイン", '#', style: 'color: #fff' %></li>
+            <li class="divider">
+              <li>
+                <%= link_to "Log out", '#', method: :delete %>
+              </li>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

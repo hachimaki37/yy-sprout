@@ -1,3 +1,208 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.head-container {
+  position: relative;
+  width: 100%;
+  video {
+  width: 100%;
+  }
+}
+
+.heading-container {
+  width: 100%;
+  height: 100%;
+  h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 40px 0 30px 0;
+  border-bottom: solid 2px #FF9400;
+  }
+}
+
+.heading-desc {
+  width: 100%;
+  height: 100%;
+  h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 40px 0 30px 0;
+    border-bottom: solid 2px #FF9400;
+  }
+    p {
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: #777777;
+    text-align: center;
+  }
+}
+
+.main-container {
+  width: 100%;
+}
+
+.main-img {
+  display: flex;
+  justify-content: center;
+}
+
+.main-item {
+  margin: 0 40px 40px 40px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+  p {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  color: #777777;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  }
+}
+
+.desc-container {
+  width: 100%;
+  padding-top: 2px;
+  p  {
+    padding-left: 3%;
+    color: #777777;
+    font-family: 'Poppins', sans-serif;
+    font-size:  1.5em;
+  }
+}
+
+.detail-container {
+  width: 100%;
+  background: radial-gradient(#F2B9A1, #FFE4C4) fixed;
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
+}
+
+.summary-container {
+  width: 100%;
+  padding: 3% 0 3% 4%;
+  color: #777777;
+  overflow: hidden;
+  h1 {
+    text-align: left;
+    font-size:  2.5em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #777777;
+  }
+  p {
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #777777;
+    text-align: left;
+  }
+}
+
+.action-container {
+  width: 100%;
+  padding: 0 5% 3% 3%;
+  color: #777777;
+  font-family: 'Trebuchet MS', sans-serif;
+  overflow: hidden;
+}
+
+.btn-login {
+  font-size: 1.5em;
+  background-color: #FFFFFF;
+  border-radius: 35px;;
+  color: #777777;
+  display:block;
+  border: solid 1px #777777;
+}
+
+.btn-signup {
+  margin: 0% 25% 0 5%;
+  font-size: 1.5em;
+  line-height: 24px;
+  background-color: #777777;
+  border-radius: 35px;;
+  color: #FFFFFF;
+  display:block;
+  border: solid 1px #FFFFFF;
+}
+
+.btn-sns {
+  background: radial-gradient(#F2B9A1, #FFE4C4) fixed;
+  padding: 5px 0;
+  height: 90px;
+}
+
+.snsbtniti {
+  list-style: none;
+}
+/* ボタン全体 */
+.flowbtn {
+  font-family: 'Comic Sans MS','Chalkboard SE',sans-serif;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  width: 66px;
+  height: 66px;
+  font-size: 25px;
+  color: #fff!important;
+  text-decoration: none;
+  transition: .5s;
+  }
+  .flowbtn i{
+  position: relative;
+  }
+
+  /* Twitter */
+  .fl_tw {
+  background: #55acee;
+  }
+
+  /* 問い合わせ */
+  .fl_ma {
+  background: #f3981d;
+  }
+
+  /* Facebook */
+  .fl_fb {
+  background: #3b5998;
+  }
+
+  /* はてブ */
+  .fl_hb {
+  background: #1ba5dc;
+  }
+
+  /* Instagram紫グラデ背景 */
+  .insta_btn {
+  background:-webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  overflow: hidden;
+  }
+
+  /* ボタン内のテキスト */
+  .flowbtn div {
+  font-size: 11px;
+  font-weight: bold;
+  position: relative;
+  }
+
+  /* ulタグの内側余白を０にする */
+  ul.snsbtniti {
+  padding: 0 20%!important;
+  }
+
+  /* ボタン全体の位置 */
+  .snsbtniti {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  }
+
+  /* ボタン同士の余白 */
+  .snsbtniti li {
+  text-align: center!important;
+  padding-top: 5px;
+  }
+
+  /* ボタンにマウスホバー時 */
+  .flowbtn:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  text-decoration: none;
+  }
