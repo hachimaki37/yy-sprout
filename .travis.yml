@@ -1,4 +1,7 @@
 language: ruby
+  apt:
+    packages:
+      - geckodriver
 rvm:
   - 2.6.4
 before_script:
@@ -9,7 +12,6 @@ cache: bundler
 bundler_args: --without development --deployment
 notifications:
   email: false
-
 script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
