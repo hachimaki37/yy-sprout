@@ -1,0 +1,2 @@
+module Match::ScheduleResultsHelper
+end
