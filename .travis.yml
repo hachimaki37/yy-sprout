@@ -9,3 +9,8 @@ cache: bundler
 bundler_args: --without development --deployment
 notifications:
   email: false
+
+script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec spec
