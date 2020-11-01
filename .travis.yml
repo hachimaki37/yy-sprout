@@ -1,4 +1,6 @@
 language: ruby
+addons:
+  firefox: "49.0.2"
 rvm:
   - 2.6.4
 before_script:
