@@ -1,8 +1,6 @@
 language: ruby
 rvm:
   - 2.6.4
-before_install:
-  - brew install geckodriver
 before_script:
   - export DISPLAY=:99.0
 services:
