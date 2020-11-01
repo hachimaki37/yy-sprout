@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse", style="background-color: #464c56; border-color: #CC0000; border-width: 0 0 10px;">
   <div class="container">
     <div class="navbar-header">
 
@@ -12,7 +12,7 @@
     </div>
     <nav>
       <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
-        <li><%= link_to "試合日程・結果", '#', style: 'color: #fff;' %></li>
+        <li><%= link_to "試合日程・結果", match_schedule_results_path, style: 'color: #fff;' %></li>
         <li><%= link_to "順位表", '#', style: 'color: #fff;' %></li>
         <li><%= link_to "選手紹介", '#', style: 'color: #fff;' %></li>
         <li class="dropdown">
