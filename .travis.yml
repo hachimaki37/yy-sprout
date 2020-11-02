@@ -1,0 +1,19 @@
+#TODO: TravisCIで下記エラーが発生するため、解消する
+#      Selenium::WebDriver::Error::WebDriverError:
+language: ruby
+addons:
+  firefox: latest
+rvm:
+  - 2.6.4
+before_script:
+  - export DISPLAY=:99.0
+services:
+  - xvfb
+cache: bundler
+bundler_args: --without development --deployment
+notifications:
+  email: false
+script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec spec

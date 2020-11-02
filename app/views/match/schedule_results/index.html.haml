@@ -1,0 +1,49 @@
+%div.d-flex.align-items-center
+  %div.lower_head
+    %h3 MATCH / RESULTS
+    %h1 試合日程・結果(2020年)
+%div.section-category
+  %h3 松戸市リーグ 1部
+%div.section-input_schedule
+  %div.ml-auto.buttom.post
+    %div.btn.btn-outline-info
+      = link_to '試合日程を登録する', new_match_schedule_result_path, title: '試合日程・結果一覧', class: 'button'
+
+%table.table.border-primary
+  %thead
+    %tr
+      %th 試合日時
+      %th 節
+      %th 対戦チーム
+      %th 試合結果
+      %th 会場
+      %th ホーム or アウェー
+      %th 作成日時
+  %tbody
+    - @schedule_results.each do |schedule_result|
+      %tr
+        %td= schedule_result.match_date_time ? I18n.l(schedule_result.match_date_time, format: :short) : "未定"
+        %td= schedule_result.section
+        %td= schedule_result.opponent
+        %td
+          - if schedule_result.match_result == "勝ち"
+            -# TODO: スコアテーブルとリレーショナルを組み表示する
+            -# 記号:○
+            &#9711;(
+            = schedule_result.section
+            ー
+            = schedule_result.section
+            )
+          - elsif schedule_result.match_result == "負け"
+            -# 記号:×
+            &#10005;
+          - elsif schedule_result.match_result == "引分け"
+            -# 記号:△
+            &#9651;
+          - else
+            未定
+        %td= schedule_result.stadium
+        %td= schedule_result.home_and_away
+        %td= I18n.l(schedule_result.created_at, format: :short)
+
+

@@ -1,0 +1,65 @@
+.lower_head {
+  width: 100%;
+  height: 190px;
+  background-color: #dc143c;
+  box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.2);
+  h1 {
+    font-size: 50px;
+    color: #fff;
+  }
+  h3 {
+    padding-top: 3%;
+    text-align: center;
+    color: #a8102e;
+  }
+}
+
+.section-category {
+  text-align: center;
+  background-color: #464c56;
+  color: #fff;
+  padding: 5px 0 9px 0;
+  margin-top: 15px;
+}
+.section-input_schedule {
+  height: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 20px;
+  .post {
+    width: 60%;
+    text-align: center;
+    background-color: #eeeeee;
+    padding: 15px 0;
+    margin: auto;
+    border-radius: 5px;
+  }
+  .button {
+    font-size: 30px;
+  }
+}
+
+// OVERRIDE
+.table {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th {
+        background-color: #888;
+        color: #fff;
+        text-align: center;
+        border-right: 5px solid #fff;
+      }
+      > td {
+        background-color: #e1e1e1;
+        color: #606060;
+        padding: 8px;
+        line-height: 8;
+        border-bottom: 5px solid #fff;
+        border-right: 5px solid #fff;
+        text-align: center;
+      }
+    }
+  }
+}
