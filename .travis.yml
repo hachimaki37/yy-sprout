@@ -7,8 +7,7 @@ rvm:
   - 2.6.4
 before_script:
   - export DISPLAY=:99.0
-services:
-  - xvfb
+  - sh -e /etc/init.d/xvfb start
 cache: bundler
 bundler_args: --without development --deployment
 notifications:
