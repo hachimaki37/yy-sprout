@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_005326) do
+ActiveRecord::Schema.define(version: 2020_11_04_014024) do
 
   create_table "schedule_results", force: :cascade do |t|
     t.datetime "match_date_time"
     t.integer "section", null: false
     t.integer "opponent", null: false
-    t.integer "match_result", default: 0
+    t.integer "match_result"
     t.integer "stadium", null: false
     t.integer "home_and_away", null: false
     t.datetime "created_at", null: false
