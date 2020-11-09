@@ -19,6 +19,7 @@
       %th 会場
       %th ホーム or アウェー
       %th 作成日時
+      %th 編集/削除
   %tbody
     - @schedule_results.each do |schedule_result|
       %tr
@@ -45,5 +46,9 @@
         %td= schedule_result.stadium
         %td= schedule_result.home_and_away
         %td= I18n.l(schedule_result.created_at, format: :short)
+        %td
+          = link_to '編集', edit_match_schedule_result_path(schedule_result)
+          &frasl;
+          = link_to '削除', match_schedule_result_path(schedule_result), method: :delete, data: { confirm: 'このスケジュールを削除しますか？'}
 
 
