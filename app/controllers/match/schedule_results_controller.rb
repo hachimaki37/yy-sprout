@@ -36,8 +36,8 @@ class Match::ScheduleResultsController < ApplicationController
   end
 
   def destroy
-    schedule_result = ScheduleResult.find_by(params[:id])
-    schedule_result.destroy
+    @schedule_result = ScheduleResult.find(params[:id])
+    @schedule_result.destroy
     flash[:success] = '削除が完了しました'
     redirect_to match_schedule_results_path
   end
