@@ -47,8 +47,8 @@
         %td= schedule_result.home_and_away
         %td= I18n.l(schedule_result.created_at, format: :short)
         %td
-          = link_to '編集', edit_match_schedule_result_path(schedule_result)
+          = link_to '編集', edit_match_schedule_result_path(schedule_result.id)
           &frasl;
-          = link_to '削除', match_schedule_result_path(schedule_result), method: :delete, data: { confirm: 'このスケジュールを削除しますか？'}
+          = link_to '削除', match_schedule_result_path(schedule_result.id), method: :delete, data: { confirm: 'このスケジュールを削除しますか？'}
 
 
