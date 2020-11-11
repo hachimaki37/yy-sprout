@@ -1,0 +1,85 @@
+%div.head-container
+  = video_tag("/videos/top-video_short.mp4", autoplay: :true, loop: :true, muted: :true, class: 'video-content')
+
+%div.heading-container
+  %h2 ABOUT SPROUT FC
+  %div.heading-desc
+    %p
+      墨田区を拠点に2011年にスタートしたフットボールチームです。
+      %br
+      現在千葉県松戸市リーグ1部に所属し、上位3チームが出場可能な五市大会を目指し、
+      %br
+      チーム一丸となって活動しております。
+
+%div.heading-container
+  %h2 OUR ACTIVITIES
+  %div.secondary-container
+    %div.main-img
+      %div.main-item
+        = image_tag 'home1.jpg', size: '320x240'
+        %p
+          We Won The Fight!
+          %br
+          SPROUT FC
+      %div.main-item
+        = image_tag 'home5.jpg', size: '320x240'
+        %p
+          Take The Goal!!
+          %br
+          SPROUT FC
+  %div.secondary-container
+    %div.main-img
+      %div.main-item
+        = image_tag 'home3.jpg', size: '320x240'
+        %p
+          松戸市リーグ
+          %br
+          ホーム戦後の一枚！
+      %div.main-item
+        = image_tag 'home4.jpg', size: '320x240'
+        %p
+          松戸市リーグ
+          %br
+          アウェイ戦後の一枚！
+
+%div.heading-container
+  %h2 NEXT MATCH
+%div.tertiary-container
+  = image_tag 'top_next_match9.jpg'
+  - if @schedule_result.present?
+    %div.next-match
+      %span
+        松戸市リーグ
+        = @schedule_result.section
+        %br
+        %br
+        %h3
+          スプロートFC&emsp;
+          VS
+          &emsp;
+          = @schedule_result.opponent
+          %br
+        (
+        = @schedule_result.home_and_away
+        )
+        %br
+        %br
+        = @schedule_result.match_date_time ? I18n.l(@schedule_result.match_date_time, format: :short) : "未定"
+        &emsp;KICKOFF
+        %br
+        = @schedule_result.stadium
+  - else
+    %div.next-match
+      %span
+        %h3 ※次節の日程はありません※
+
+%div.heading-container
+  %h2 &#10004 MEMBERS WANTED！
+  %div.quaternary-container
+    %div.quaternary-desc
+      %p
+        私たちと共に五市大会を目指しませんか？共に戦うメンバーを募集！
+        %br
+        ご興味のある方はContactからご連絡ください！ご応募お待ちしております。
+    %div.contact-btn
+      = link_to "Contact", '#', class: "btn btn-lg btn-primary btn-login"
