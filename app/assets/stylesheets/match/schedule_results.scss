@@ -39,19 +39,18 @@
   }
 }
 
-// OVERRIDE
-.table {
-  > thead,
-  > tbody,
-  > tfoot {
-    > tr {
-      > th {
+.table.schedule_result {
+  thead,
+  tbody,
+  tfoot {
+    tr {
+      th {
         background-color: #888;
         color: #fff;
         text-align: center;
         border-right: 5px solid #fff;
       }
-      > td {
+      td {
         background-color: #e1e1e1;
         color: #606060;
         padding: 8px;

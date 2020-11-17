@@ -19,7 +19,6 @@
   }
   .heading-desc {
     width: 100%;
-    height: 100%;
     p {
       text-align: center;
       color: #777777;
@@ -35,7 +34,7 @@
     justify-content: center;
   }
   .main-item {
-    margin: 0 40px 40px 40px;
+    margin: 0 40px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
     p {
@@ -56,7 +55,7 @@
   }
   .next-match {
     font-family: 'Caveat', cursive;
-    width: 70%;
+    width: 100%;
     span {
       width: 100%;
       position: absolute;
@@ -69,9 +68,8 @@
       border-bottom: solid 3px #FFFFFF;
       border-top: solid 3px #FFFFFF;
     }
-    h3 {
+    strong {
       font-size: 40px;
-      font-weight: bold;
     }
   }
 }
@@ -87,13 +85,13 @@
     p {
       color: #777777;
       text-align: center;
+      font-weight: bold;
     }
   }
   .contact-btn {
     width: 100%;
     padding: 0 5% 3% 3%;
     color: #777777;
-    overflow: hidden;
   }
 }
 
