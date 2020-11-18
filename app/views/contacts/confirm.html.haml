@@ -11,16 +11,16 @@
     %tr
       %th 名前
       %td
-        = f.hidden_field :name
-        = @contact.name
+        = f.hidden_field :contact_name
+        = @contact.contact_name
     %tr
       %th メールアドレス
       %td
-        = f.hidden_field :email
-        = @contact.email
-    %tr
+        = f.hidden_field :contact_email
+        = @contact.contact_email
+    %trs
       %th お問い合わせ内容
       %td
-        = f.hidden_field :message
-        = simple_format(@contact.message)
+        = f.hidden_field :contact_comment
+        = simple_format(@contact.contact_comment)
   = f.submit '送信する', class: 'btn btn-primary'
