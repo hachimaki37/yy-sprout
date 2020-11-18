@@ -1,0 +1,26 @@
+= form_with model: @contact, url: thanks_contacts_path, local: true do |f|
+  %dv.contact-header
+    %h2 Contact 確認
+
+  .contact-desc
+    お問い合わせ内容をご確認の上、「送信する」を押してください。
+    %br
+    = link_to 'Contactページに戻る', contacts_path, class: 'btn'
+
+  %table.table.contact
+    %tr
+      %th 名前
+      %td
+        = f.hidden_field :contact_name
+        = @contact.contact_name
+    %tr
+      %th メールアドレス
+      %td
+        = f.hidden_field :contact_email
+        = @contact.contact_email
+    %trs
+      %th お問い合わせ内容
+      %td
+        = f.hidden_field :contact_comment
+        = simple_format(@contact.contact_comment)
+  = f.submit '送信する', class: 'btn btn-primary'

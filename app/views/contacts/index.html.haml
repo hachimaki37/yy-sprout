@@ -1,0 +1,42 @@
+= form_with url: confirm_contacts_path, local: true do |f|
+  %dv.contact-header
+    %h2 Contact
+
+  - if @contact.errors.any?
+    %div.alert.alert-danger
+      %strong 入力内容にエラーがあるため、ご確認ください。
+      %ul
+        - @contact.errors.each do |attr, msg|
+          %li
+            = msg
+  %div.contact-desc
+    「メンバー募集」に関するお問い合わせ、「その他」お問い合わせはこちらのフォームよりご連絡ください。
+    %br
+    = link_to 'トップページに戻る', root_path, class: 'btn'
+  %table.table.contact
+    %tr
+      %th
+        名前
+        %span.text-danger （必須）
+      %td
+        = f.text_field :contact_name
+    %tr
+      %th
+        メールアドレス
+        %span.text-danger （必須）
+        %td
+          = f.text_field :contact_email, placeholder: '半角英数字 （例: sproutfc@gmail.com）'
+    %tr
+      %th
+        確認用メールアドレス
+        %span.text-danger （必須）
+        %td
+          = f.text_field :contact_email_confirmation, placeholder: '確認のため、もう一度メールアドレスを入力してください',
+                                                      oncopy: 'return false',
+                                                      onpaste: 'return false',
+                                                      oncontextmenu: 'return false'
+    %tr
+      %th お問い合わせ内容
+      %td
+        = f.text_area :contact_comment
+  = f.submit '確認画面へ', class: 'btn btn-primary'
