@@ -32,7 +32,7 @@ RSpec.feature "Contacts", js: true do
         expect(ActionMailer::Base.deliveries.size).to eq(1)
         expect(sent_contact.from).to eq ["contact@sproutfc.com"]
         expect(sent_contact.subject).to eq '【SPROUT FC】お問い合わせがありました'
-        expect(sent_contact.to).to eq ['juta1991lon@gmail.com']
+        expect(sent_contact.to).to eq ['ksezj93908@yahoo.co.jp']
         expect(sent_contact.body).to have_content 'SPROUT FCの問合せフォームからお問い合わせがありました。'
         expect(sent_contact.body).to have_content name
         expect(sent_contact.body).to have_content email
