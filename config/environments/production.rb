@@ -69,6 +69,8 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
+  host = 'https://sprout-fc.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
