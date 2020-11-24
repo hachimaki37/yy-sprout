@@ -6,6 +6,6 @@ class ContactsMailer < ApplicationMailer
     mail_subject = "【SPROUT FC】お問い合わせがありました"
 
     @contact = contact
-    mail(to: "ksezj93908@yahoo.co.jp", subject: mail_subject)
+    mail(to: "ksezj93908@yahoo.co.jp","juta1991lon@gmail.com", subject: mail_subject)
   end
 end
