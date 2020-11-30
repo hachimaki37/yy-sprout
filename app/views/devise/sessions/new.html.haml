@@ -1,0 +1,22 @@
+%h1 ログイン
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+
+  %div.field
+    = f.label :メールアドレス
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+
+  %div.field
+    = f.label :パスワード
+    = f.password_field :password, autocomplete: "current-password", class: "form-control"
+
+  - if devise_mapping.rememberable?
+    %div.field
+      = f.check_box :remember_me
+      = f.label :ログイン状態を保存する場合は、チェックを！
+
+  %div.actions
+    = f.submit "ログインする", class: "btn btn-primary btn-block"
+
+= render "devise/shared/links"
