@@ -1,13 +1,18 @@
 %div.d-flex.align-items-center
   %div.lower_head
     %h3 MATCH / RESULTS
-    %h1 試合日程・結果(2020年)
+    %h1
+      試合日程・結果(
+      = Time.now.year
+      年)
 %div.section-category
   %h3 松戸市リーグ 1部
-%div.section-input_schedule
-  %div.ml-auto.buttom.post
-    %div.btn.btn-outline-info
-      = link_to '試合日程を登録する', new_match_schedule_result_path, title: '試合日程・結果一覧', class: 'button'
+
+- if user_signed_in? && current_user.admin?
+  %div.section-input_schedule
+    %div.ml-auto.buttom.post
+      %div.btn.btn-outline-info
+        = link_to '試合日程を登録する', new_match_schedule_result_path, title: '試合日程・結果一覧', class: 'button'
 
 %table.table.schedule_result
   %thead
@@ -48,8 +53,11 @@
         %td= schedule_result.home_and_away
         %td= I18n.l(schedule_result.created_at, format: :short)
         %td
-          = link_to '編集', edit_match_schedule_result_path(schedule_result.id)
-          &frasl;
-          = link_to '削除', match_schedule_result_path(schedule_result.id), method: :delete, data: { confirm: 'このスケジュールを削除しますか？'}
+          - if user_signed_in? && current_user.admin?
+            = link_to '編集', edit_match_schedule_result_path(schedule_result.id)
+            &frasl;
+            = link_to '削除', match_schedule_result_path(schedule_result.id), method: :delete, data: { confirm: 'このスケジュールを削除しますか？'}
+          - else
+            &ndash;
 
 
