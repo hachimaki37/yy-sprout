@@ -1,14 +1,22 @@
 class Match::ScheduleResultsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @schedule_results = ScheduleResult.all.order(section: "ASC")
   end
 
   def new
-    @schedule_results = ScheduleResult.new
+    if admin_user?
+      @schedule_results = ScheduleResult.new
+    else
+      flash[:success] = '権限がないためアクセスできません'
+      redirect_to match_schedule_results_path
+    end
   end
 
   def create
     @schedule_result = ScheduleResult.create(schedule_result_params)
+    @schedule_result.user_id = current_user.id
     if @schedule_result.save
       flash[:success] = '登録が完了しました'
       redirect_to match_schedule_results_path
@@ -20,7 +28,12 @@ class Match::ScheduleResultsController < ApplicationController
 
   def edit
     #TODO: 編集画面に移ると、データが初期化されるため修正したい
-    @schedule_result = ScheduleResult.find(params[:id])
+    if admin_user?
+      @schedule_result = ScheduleResult.find(params[:id])
+    else
+      flash[:success] = '権限がないためアクセスできません'
+      redirect_to match_schedule_results_path
+    end
   end
 
   def update
@@ -40,6 +53,10 @@ class Match::ScheduleResultsController < ApplicationController
     @schedule_result.destroy
     flash[:success] = '削除が完了しました'
     redirect_to match_schedule_results_path
+  end
+
+  def admin_user?
+    user_signed_in? && current_user.admin?
   end
 
   private
