@@ -87,5 +87,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.include Devise::Test::IntegrationHelpers, type: :features
   config.include FactoryBot::Syntax::Methods
 end
