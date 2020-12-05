@@ -1,0 +1,19 @@
+%footer.footer
+  %small
+    &copy;2011-
+    = Time.now.year
+    SPROUT FOOTBALL CLUB. All Rights Reserved.
+  %nav
+    %ul
+      - if user_signed_in?
+        %li{ style: 'font-weight: bold; border-bottom: 1px solid #CC0000;' }
+          現在
+          = current_user.nickname
+          でログイン中
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        %li
+          = link_to "ログイン", new_user_session_path
+        %li
+          = link_to "新規アカウント登録", new_user_registration_path

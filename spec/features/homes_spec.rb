@@ -2,8 +2,13 @@ require 'rails_helper'
 
 RSpec.feature "root_path", js: true do
   describe 'NEXT MATCHが表示されること' do
+    let(:admin_user) { create(:admin_user) }
+
     before do
-      visit root_path
+      visit '/users/sign_in'
+      fill_in 'user_email', with: admin_user.email
+      fill_in 'user_password', with: admin_user.password
+      click_on 'ログインする'
     end
 
     context 'match_resultがnilの場合' do
