@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # admin page
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  # page 準備中
+  # 準備中 page
   get 'preparation', to: 'preparation#index'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
