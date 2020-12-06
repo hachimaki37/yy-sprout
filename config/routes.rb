@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#index'
 
-  devise_for :users
-
   # schedule_results page
   #TODO: as使いたい
   post "match/schedule_results/:id", to: "match/schedule_results#update"
@@ -18,9 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :users
+
   # admin page
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  # page 準備中
+  get 'preparation', to: 'preparation#index'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end
