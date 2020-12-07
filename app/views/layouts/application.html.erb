@@ -2,6 +2,7 @@
 <html>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <head>
+    <%= analytics_init if Rails.env.production? %>
     <title>Sprout FC</title>
     <%= render 'layouts/rails_default'%>
     <%= render 'layouts/shim' %>
