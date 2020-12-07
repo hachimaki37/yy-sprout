@@ -41,8 +41,6 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin', '~> 1.4'
-gem 'google-analytics-rails'
-gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -81,4 +79,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'google-analytics-rails'
+  gem 'dotenv-rails'
 end
