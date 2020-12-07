@@ -335,7 +335,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
-  google-analytics-rails
+  google-analytics-rails (= 1.1.1)
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
