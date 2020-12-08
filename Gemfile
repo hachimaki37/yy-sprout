@@ -41,7 +41,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin', '~> 1.4'
-gem 'google-analytics-rails', '1.1.1'
+gem 'google-analytics-rails'
 gem 'dotenv-rails'
 
 group :development, :test do
