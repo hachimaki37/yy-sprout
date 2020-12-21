@@ -55,10 +55,6 @@ class Match::ScheduleResultsController < ApplicationController
     redirect_to match_schedule_results_path
   end
 
-  def admin_user?
-    user_signed_in? && current_user.admin?
-  end
-
   private
 
   def schedule_result_params

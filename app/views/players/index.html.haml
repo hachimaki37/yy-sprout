@@ -1,0 +1,39 @@
+%div.players-heading
+  %h2 TEAM
+
+- if user_signed_in? && current_user.admin?
+  %div.section-input_schedule
+    %div.ml-auto.buttom.post
+      %div.btn.btn-outline-info
+        = link_to '選手を登録する', new_player_path, title: '試合日程・結果一覧', class: 'button'
+
+%div.players-img
+  = image_tag 'team.jpg'
+
+%div.players-heading
+  %h2 PLAYERS
+- if @players.present?
+  %div.players-container
+    - @players.each do |player|
+      %div.post-container
+        %div.summary
+          -#TODO :image_uploaderでdefault表示する
+          - if player.image?
+            = image_tag player.image.url
+          - else
+            = image_tag 'default.png', size: '225x300'
+          %br
+          %br
+          選手名：
+          = player.name
+          %br
+          背番号：
+          = player.squad_number
+          %br
+          ポシション：
+          = player.position
+          %br
+- else
+  %div.non-players
+    %strong
+      登録されている選手はおりません。

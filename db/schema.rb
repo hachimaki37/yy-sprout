@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_000400) do
+ActiveRecord::Schema.define(version: 2020_12_16_103527) do
+
+  create_table "players", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "squad_number", default: 0, null: false
+    t.date "birthday", default: "1000-01-01"
+    t.integer "position", default: 0, null: false
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "schedule_results", force: :cascade do |t|
     t.datetime "match_date_time"

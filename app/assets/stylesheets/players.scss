@@ -1,0 +1,41 @@
+.players-heading  {
+  width: 25%;
+  margin: 30px auto 15px;
+  padding-bottom: 10px;
+  h2 {
+  line-height: 1.2;
+  font-weight: bold;
+  font-size: 40px;
+  border-bottom: 8px solid #CC0000;
+  color: #000;
+  }
+}
+
+.players-img {
+  img {
+    width: 100%;
+  }
+}
+
+.players-container {
+  width: 100%;
+  text-align: center;
+  .post-container {
+    display: inline-flex;
+    margin: 5px;
+    padding: 10px;
+    .summary {
+      font-weight: bold;
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+}
+
+.non-players {
+  text-align: center;
+  padding-bottom: 20px;
+  strong {
+    font-size: 20px;
+  }
+}

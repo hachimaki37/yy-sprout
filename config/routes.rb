@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     end
   end
 
+  # players page
+  resources :players, only: [:index, :new, :create]
+
+
   devise_for :users
 
   # admin page
