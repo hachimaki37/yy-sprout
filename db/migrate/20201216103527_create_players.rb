@@ -4,7 +4,7 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.string  :name,         null: false, default: ""
       t.integer :squad_number, null: false, default: 0
       t.date    :birthday,                  default: "1000-01-01"
-      t.integer :position,    null: false,  default: 0
+      t.integer :position,     null: false, default: 0
       t.string  :image
 
       t.timestamps

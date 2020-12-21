@@ -1,4 +1,4 @@
-%div.player-heading
+%div.players-heading
   %h2 TEAM
 
 - if user_signed_in? && current_user.admin?
@@ -7,10 +7,10 @@
       %div.btn.btn-outline-info
         = link_to '選手を登録する', new_player_path, title: '試合日程・結果一覧', class: 'button'
 
-%div.player-img
+%div.players-img
   = image_tag 'team.jpg'
 
-%div.player-heading
+%div.players-heading
   %h2 PLAYERS
 - if @players.present?
   %div.players-container
