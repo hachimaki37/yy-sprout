@@ -11,11 +11,13 @@ RSpec.feature "/player", js: true do
         fill_in 'user_password', with: admin_user.password
         click_on 'ログインする'
         click_on '選手紹介'
-        click_on '選手を登録する'
       end
 
       context '入力項目が正常な場合' do
         scenario '項目全てを選択して登録ができること' do
+          expect(page).to have_content '登録されている選手はおりません。'
+          click_on '選手を登録する'
+
           expect(page).to have_content '選手登録'
 
           fill_in 'name', with: playername = Faker::Name.name
@@ -32,6 +34,9 @@ RSpec.feature "/player", js: true do
         end
 
         scenario '選手画像が選択されない場合' do
+          expect(page).to have_content '登録されている選手はおりません。'
+          click_on '選手を登録する'
+
           expect(page).to have_content '選手登録'
 
           fill_in 'name', with: playername = Faker::Name.name
@@ -50,6 +55,7 @@ RSpec.feature "/player", js: true do
       context '入力項目が非正常な場合' do
         context 'バリデーションが効くこと' do
           scenario '入力項目が全て未入力の場合' do
+            click_on '選手を登録する'
             expect(page).to have_content '選手登録'
 
             fill_in 'name', with: ''
@@ -63,6 +69,7 @@ RSpec.feature "/player", js: true do
           end
 
           scenario '選手名が10文字以上の場合' do
+            click_on '選手を登録する'
             expect(page).to have_content '選手登録'
 
             fill_in 'name', with: playername = Faker::Name.name + 'スプロートテスト'
@@ -75,6 +82,7 @@ RSpec.feature "/player", js: true do
           end
 
           scenario '選択した背番号が既に登録されている場合' do
+            click_on '選手を登録する'
             expect(page).to have_content '選手登録'
 
             fill_in 'name', with: playername = Faker::Name.name
