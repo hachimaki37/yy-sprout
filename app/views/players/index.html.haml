@@ -12,23 +12,28 @@
 
 %div.player-heading
   %h2 PLAYERS
-%div.players-container
-  - @players.each do |player|
-    %div.post-container
-      %div.summary
-        -#TODO :image_uploaderでdefault表示する
-        - if player.image?
-          = image_tag player.image.url
-        - else
-          = image_tag 'default.png', size: '225x300'
-        %br
-        %br
-        選手名：
-        = player.name
-        %br
-        背番号：
-        = player.squad_number
-        %br
-        ポシション：
-        = player.position
-        %br
+- if @players.present?
+  %div.players-container
+    - @players.each do |player|
+      %div.post-container
+        %div.summary
+          -#TODO :image_uploaderでdefault表示する
+          - if player.image?
+            = image_tag player.image.url
+          - else
+            = image_tag 'default.png', size: '225x300'
+          %br
+          %br
+          選手名：
+          = player.name
+          %br
+          背番号：
+          = player.squad_number
+          %br
+          ポシション：
+          = player.position
+          %br
+- else
+  %div.non-players
+    %strong
+      登録されている選手はおりません。
