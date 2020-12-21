@@ -1,0 +1,41 @@
+%dev.d-flex.align-items-center
+  %h1 選手登録
+%div.section-input_schedule
+  %div.ml-auto.posts_button.post
+    = link_to '選手一覧に戻る', players_path, title: '選手一覧', class: 'botton'
+
+= form_with url: players_path, local: true do |f|
+
+  - if @players.errors.any?
+    %div.alert.alert-denger
+      %stronge 入力内容にエラーがあるため、確認ください。
+      %ul
+        - @players.errors.each do |attr, msg|
+          %li
+            = msg
+
+  %div.form-group
+    = f.label :name, '選手名'
+    = f.text_field :name , class: 'form-control'
+    %form-text.text-muted#small.title-tip
+      ※選手名を入力してください（10文字以内）
+  %div.form-group
+    = f.label :squad_number, '背番号'
+    = f.select :squad_number, options_for_select(0..100), include_blank: '選択してください', class: 'form-control'
+    %form-text.text-muted#small.title-tip
+      ※選手の背番号を選択して下さい
+  %div.form-group
+    = f.label :position, 'ポシション'
+    = f.select :position, Player.positions.keys, include_blank: '', class: 'form-control'
+    %form-text.text-muted#small.title-tip
+      ※選手のポジションを選択して下さい
+  %div.form-group
+    = f.label :image, '選手写真'
+    %br
+    = image_tag @players.image.thumb.url if @players.image?
+    = f.file_field :image
+    = f.hidden_field :image_cache
+    %form-text.text-muted#small.title-tip
+      ※選手写真がない場合、ファイル選択は不要です。
+
+  = f.submit '選手を登録する', class: 'btn btn-info btn-block'
