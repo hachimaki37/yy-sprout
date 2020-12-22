@@ -33,6 +33,10 @@
           ポシション：
           = player.position
           %br
+          - if user_signed_in? && current_user.admin?
+            = link_to '編集', edit_player_path(player.id)
+            &frasl;
+            = link_to '削除', player_path(player.id), method: :delete, data: { confirm: "#{player.name}の選手登録を削除しますか？"}
 - else
   %div.non-players
     %strong

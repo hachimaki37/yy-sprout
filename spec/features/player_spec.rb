@@ -217,7 +217,7 @@ RSpec.feature "/player", js: true do
         click_on '選手を登録する'
       end
 
-      scenario '登録選手の編集ができること' do
+      scenario '登録選手の削除ができること' do
         expect(page).to have_content '選手登録'
 
         fill_in 'name', with: playername = Faker::Name.name
@@ -249,7 +249,7 @@ RSpec.feature "/player", js: true do
         click_on 'ログインする'
       end
 
-      scenario '選手登録の削除ができないこと' do
+      scenario '登録選手の削除ができないこと' do
         click_on '選手紹介'
 
         expect(page).to have_content 'PLAYERS'

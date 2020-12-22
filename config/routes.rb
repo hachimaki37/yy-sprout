@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #TODO: as使いたい
   post "match/schedule_results/:id", to: "match/schedule_results#update"
   resource :match do
-    resources :schedule_results, controller: 'match/schedule_results', only: [:index, :new, :create , :edit, :destroy]
+    resources :schedule_results, controller: 'match/schedule_results', except: [:show]
   end
 
   # contact page
@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   end
 
   # players page
-  resources :players, only: [:index, :new, :create]
-
+  resources :players, except: [:show]
 
   devise_for :users
 
