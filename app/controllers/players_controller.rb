@@ -32,8 +32,8 @@ class PlayersController < ApplicationController
   end
 
   def update
-    player = find_player_id
-    if player.update(require_player_params)
+    @players = find_player_id
+    if @players.update(require_player_params)
       flash[:success] = '更新が完了しました'
       redirect_to players_path
     else
