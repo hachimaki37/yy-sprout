@@ -1,9 +1,9 @@
 %dev.d-flex.align-items-center
-  %h1 選手登録
+  %h1 選手登録の編集
 
 = render "form"
 -#TODO: _fromパーシャルでedit/newをまとめる
-= form_with url: @players, local: true do |f|
+= form_with model: @players, local: true do |f|
 
   - if @players.errors.any?
     %div.alert.alert-denger
@@ -37,4 +37,4 @@
     %form-text.text-muted#small.title-tip
       ※選手写真がない場合、ファイル選択は不要です。
 
-  = f.submit '選手を登録する', class: 'btn btn-info btn-block'
+  = f.submit '登録を更新する', class: 'btn btn-info btn-block'
