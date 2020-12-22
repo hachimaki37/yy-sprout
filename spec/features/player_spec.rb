@@ -139,4 +139,122 @@ RSpec.feature "/player", js: true do
       end
     end
   end
+
+  describe '登録選手の編集' do
+    context 'adminユーザの場合' do
+      let(:admin_user) { create(:admin_user) }
+
+      before do
+        visit '/users/sign_in'
+        fill_in 'user_email', with: admin_user.email
+        fill_in 'user_password', with: admin_user.password
+        click_on 'ログインする'
+        click_on '選手紹介'
+        click_on '選手を登録する'
+      end
+
+      scenario '登録選手の編集ができること' do
+        expect(page).to have_content '選手登録'
+
+        fill_in 'name', with: playername = Faker::Name.name
+        select '10', from: 'squad_number'
+        select 'MF', from: 'position'
+        attach_file 'image', "#{Rails.root}/spec/factories/images/test_pic.png"
+        click_on '登録する'
+
+        expect(page).to have_content '登録が完了しました'
+        expect(page).to have_content playername
+        expect(page).to have_content 10
+        expect(page).to have_content 'MF'
+        have_css "image[src$='test_pic.png']"
+
+        click_on '編集'
+        expect(page).to have_content '選手登録の編集'
+
+        fill_in 'player_name', with: playername = Faker::Name.name + '新芽'
+        select '15', from: 'player_squad_number'
+        select 'FW', from: 'player_position'
+        attach_file 'player_image', "#{Rails.root}/spec/factories/images/test_pic.png"
+        click_on '登録を更新する'
+
+        expect(page).to have_content '更新が完了しました'
+        expect(page).to have_content playername
+        expect(page).to have_content 15
+        expect(page).to have_content 'FW'
+        have_css "image[src$='test_pic.png']"
+      end
+    end
+
+    context 'adminユーザではない場合' do
+      let(:user) { create(:user) }
+
+      before do
+        visit '/users/sign_in'
+        fill_in 'user_email', with: user.email
+        fill_in 'user_password', with: user.password
+        click_on 'ログインする'
+      end
+
+      scenario '選手登録の編集ができないこと' do
+        click_on '選手紹介'
+
+        expect(page).to have_content 'PLAYERS'
+        expect(page).not_to have_content '編集'
+      end
+    end
+  end
+
+  describe '登録選手の削除' do
+    context 'adminユーザの場合' do
+      let(:admin_user) { create(:admin_user) }
+
+      before do
+        visit '/users/sign_in'
+        fill_in 'user_email', with: admin_user.email
+        fill_in 'user_password', with: admin_user.password
+        click_on 'ログインする'
+        click_on '選手紹介'
+        click_on '選手を登録する'
+      end
+
+      scenario '登録選手の編集ができること' do
+        expect(page).to have_content '選手登録'
+
+        fill_in 'name', with: playername = Faker::Name.name
+        select '10', from: 'squad_number'
+        select 'MF', from: 'position'
+        attach_file 'image', "#{Rails.root}/spec/factories/images/test_pic.png"
+        click_on '登録する'
+
+        expect(page).to have_content '登録が完了しました'
+        expect(page).to have_content playername
+        expect(page).to have_content 10
+        expect(page).to have_content 'MF'
+        have_css "image[src$='test_pic.png']"
+
+        click_on '削除'
+        page.driver.browser.switch_to.alert.accept
+
+        expect(page).to have_content '削除が完了しました'
+      end
+    end
+
+    context 'adminユーザではない場合' do
+      let(:user) { create(:user) }
+
+      before do
+        visit '/users/sign_in'
+        fill_in 'user_email', with: user.email
+        fill_in 'user_password', with: user.password
+        click_on 'ログインする'
+      end
+
+      scenario '選手登録の削除ができないこと' do
+        click_on '選手紹介'
+
+        expect(page).to have_content 'PLAYERS'
+        expect(page).not_to have_content '削除'
+      end
+    end
+  end
 end
