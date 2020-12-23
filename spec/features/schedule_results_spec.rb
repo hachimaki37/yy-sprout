@@ -145,12 +145,12 @@ RSpec.feature "match/schedule_results", js: true do
         click_on '編集'
         expect(page).to have_content '試合スケジュール変更'
 
-        fill_in 'match_date_time', with: Date.yesterday
-        select '第2節', from: 'section'
-        select 'サザンクロス', from: 'opponent'
-        select '負け', from: 'match_result'
-        select '古々崎第2G', from: 'stadium'
-        select 'アウェー' , from: 'home_and_away'
+        fill_in 'schedule_result_match_date_time', with: Date.yesterday
+        select '第2節', from: 'schedule_result_section'
+        select 'サザンクロス', from: 'schedule_result_opponent'
+        select '負け', from: 'schedule_result_match_result'
+        select '古々崎第2G', from: 'schedule_result_stadium'
+        select 'アウェー' , from: 'schedule_result_home_and_away'
         click_on '更新する'
 
         expect(page).to have_content '更新が完了しました'

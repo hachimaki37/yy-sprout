@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @players = Player.all.order(position: "ASC")
   end

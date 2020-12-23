@@ -27,9 +27,8 @@ class Match::ScheduleResultsController < ApplicationController
   end
 
   def edit
-    #TODO: 編集画面に移ると、データが初期化されるため修正したい
     if admin_user?
-      @schedule_result = ScheduleResult.find(params[:id])
+      @schedule_result = find_Schedule_Result_id
     else
       flash[:success] = '権限がないためアクセスできません'
       redirect_to match_schedule_results_path
@@ -37,25 +36,26 @@ class Match::ScheduleResultsController < ApplicationController
   end
 
   def update
-    @schedule_result = ScheduleResult.find(params[:id])
-    @schedule_result.update_attributes(match_date_time: params[:match_date_time],
-                            section: params[:section],
-                            opponent: params[:opponent],
-                            match_result: params[:match_result],
-                            stadium: params[:stadium],
-                            home_and_away: params[:home_and_away])
+    @schedule_result = find_Schedule_Result_id
+    if @schedule_result.update(schedule_result_params)
     flash[:success] = '更新が完了しました'
     redirect_to match_schedule_results_path
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @schedule_result = ScheduleResult.find(params[:id])
-    @schedule_result.destroy
+    schedule_result = find_Schedule_Result_id
+    schedule_result.destroy
     flash[:success] = '削除が完了しました'
     redirect_to match_schedule_results_path
   end
 
   private
+  def find_Schedule_Result_id
+    ScheduleResult.find(params[:id])
+  end
 
   def schedule_result_params
     params.require(:schedule_result).permit(:match_date_time, :section, :opponent, :match_result, :stadium, :home_and_away)

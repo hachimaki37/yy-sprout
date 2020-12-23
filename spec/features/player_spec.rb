@@ -133,8 +133,8 @@ RSpec.feature "/player", js: true do
           click_on 'ログアウト'
           visit '/players/new'
 
-          expect(page).to have_content '権限がないためアクセスできません'
-          expect(page).to have_content 'PLAYERS'
+          expect(page).to have_content 'アカウント登録もしくはログインしてください'
+          expect(page).to have_content 'ログイン'
         end
       end
     end
