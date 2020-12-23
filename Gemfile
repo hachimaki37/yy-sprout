@@ -44,6 +44,7 @@ gem 'rails_admin', '~> 1.4'
 gem 'google-analytics-rails'
 gem 'dotenv-rails'
 gem 'carrierwave'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
