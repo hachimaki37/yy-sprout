@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   # schedule_results page
-  #TODO: as使いたい
-  post "match/schedule_results/:id", to: "match/schedule_results#update"
   resource :match do
     resources :schedule_results, controller: 'match/schedule_results', except: [:show]
   end

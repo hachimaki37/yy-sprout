@@ -1,10 +1,9 @@
 %dev.d-flex.align-items-center
   %h1 試合スケジュール登録
-%div.section-input_schedule
-  %div.ml-auto.posts_button.post
-    = link_to '試合日程・結果に戻る', match_schedule_results_path, title: '試合日程・結果一覧', class: 'botton'
 
-= form_for(@schedule_results, url: match_schedule_results_path) do |f|
+= render "form"
+
+= form_with model: @schedule_results, url: match_schedule_results_path, local: true do |f|
   %div.form-group
     = f.label :match_date_time, '試合日時'
     = f.datetime_field :match_date_time, class: 'form-control'
