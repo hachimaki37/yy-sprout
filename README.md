@@ -15,7 +15,7 @@ README
 
 I made a website for the FootBall team I belong to.The site has a schedule and member introductions, contact, sign in, sign up.Other features are currently under construction.
 
-# Application demonstration
+# Application demonstration(1 minute 58 seconds)
 
 https://user-images.githubusercontent.com/60802599/142959715-ec4c7af1-8a23-494c-826f-71ec3ce6b5d7.mov
 
