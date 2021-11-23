@@ -1,31 +1,26 @@
 # README
 [![Build Status](https://travis-ci.org/hachimaki37/yy-sprout.svg?branch=master)](https://travis-ci.org/hachimaki37/yy-sprout)
+* Title
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SPROUT FC(FootBall team)
 
-Things you may want to cover:
-リポジトリの説明・概要：
-目的:
-　外部：名刺がわり、認知の拡大
-　内部：情報の一元管理（情報が散乱している）
-「使い方」
-* Ruby version
-2.6.4
-* Rails version
-Rails 5.2.4.4
-* System dependencies
+![SPROUTFC](https://user-images.githubusercontent.com/60802599/142957762-6c2eed13-3ada-4a72-a2c6-9919fb58769b.jpeg)
 
-* Configuration
+* Application description
 
-* Database creation
+I made a website for the FootBall team I belong to.The site has a schedule and member introductions, contact, sign in, sign up.Other features are currently under construction.
 
-* Database initialization
+* Application demonstration
 
-* How to run the test suite
+https://user-images.githubusercontent.com/60802599/142959715-ec4c7af1-8a23-494c-826f-71ec3ce6b5d7.mov
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Application admin page
+![スクリーンショット 2021-11-23 10 40 47](https://user-images.githubusercontent.com/60802599/142959928-2aa42b69-7184-44c5-add7-a681d0754b9f.png)
+
+
+* Ruby version：2.6.4
+
+* Rails version：5.2.4.4
 
 * ...
