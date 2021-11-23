@@ -1,8 +1,6 @@
 # README
 [![Build Status](https://travis-ci.org/hachimaki37/yy-sprout.svg?branch=master)](https://travis-ci.org/hachimaki37/yy-sprout)
-* Title
-
-SPROUT FC(FootBall team)
+* Title：SPROUT FC(FootBall team)
 
 ![SPROUTFC](https://user-images.githubusercontent.com/60802599/142957762-6c2eed13-3ada-4a72-a2c6-9919fb58769b.jpeg)
 
