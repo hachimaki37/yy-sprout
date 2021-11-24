@@ -1,10 +1,3 @@
-README
-# Site URL
-
-* AWS：http://sprout-fc.tk/
-
-* HEROKU：https://yy-sprout.herokuapp.com/
-
 # Title
 
 * SPROUT FC(FootBall team)
@@ -41,3 +34,9 @@ https://user-images.githubusercontent.com/60802599/142959715-ec4c7af1-8a23-494c-
 * Goods purchase
 
 ・・・
+
+# Site URL
+
+* AWS：http://sprout-fc.tk/
+
+* HEROKU：https://yy-sprout.herokuapp.com/
